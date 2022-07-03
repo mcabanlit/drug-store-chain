@@ -8,20 +8,24 @@ Rossmann is Germany's second-largest drug store chain. We have been provided wit
 
 
 ### Files
-Here are some files that may be important to those who would like to check the code or to thouse who would want to replicate the project.
-* [app.py](https://github.com/mcabanlit/drug-store-chain/blob/main/app.py) - Contains
-* [drug-store-sales-prediction.ipynb](https://github.com/mcabanlit/drug-store-chain/blob/main/drug-store-sales-prediction.ipynb) - Cheka
-* [miniconda_requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/miniconda_requirements.txt) - Cheka
-* [requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/requirements.txt) - Cheka 2
-* [sales_prediction_small.pkl](https://github.com/mcabanlit/drug-store-chain/blob/main/sales_prediction_small.pkl) - Chesmes
+Here are some files that may be important to those who would like to check the code or to those who would want to replicate the project.
+* [app.py](https://github.com/mcabanlit/drug-store-chain/blob/main/app.py) - This python file contains almost all of our code for deployment.
+* [drug-store-sales-prediction.ipynb](https://github.com/mcabanlit/drug-store-chain/blob/main/drug-store-sales-prediction.ipynb) - This notebook contains our data preprocessing, estimator testing, and hyperparameter optimization.
+* [miniconda_requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/miniconda_requirements.txt) - This .txt file contains all the libraries that were used in the miniconda environment. 
+* [requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/requirements.txt) - This .txt file contains all the necessary libraries that were used for the deployment of the API to Heroku.
+* [sales_prediction_small.pkl](https://github.com/mcabanlit/drug-store-chain/blob/main/sales_prediction_small.pkl) - This is our exported `RandomForestRegressor` model.
 
 ### Dataset
 For this project, we are given two sets of data, which are as follows:
 * [train.csv](https://github.com/mcabanlit/drug-store-chain/blob/main/data/train.csv) - contains sales data on a daily frequency
 * [store.csv](https://github.com/mcabanlit/drug-store-chain/blob/main/data/store.csv) - contains store information
 
-### Models
+After enriching our datasets and merging these two csvs, we tried to remove the outliers of the dataset using the three sigma limits method. 
+![image](https://user-images.githubusercontent.com/102983286/177042424-33d99b12-6c76-458c-a4ef-cc0bf6c28d2d.png)
 
+
+### Models
+In this regression problem, we tried to find an optimal estimator that could produced better accuracy. The models that we have used in the notebook were: 
 ### Usage
 
 ### Issues
