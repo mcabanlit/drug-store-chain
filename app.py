@@ -92,6 +92,11 @@ def predict_sales(input):
     if null_fields > 0:
         return jsonify(ERROR='Missing input values, please recheck JSON file.')
 
+    # Since sales_df.loc[(sales_df['Open'] == 0) & (sales_df['Sales'] > 0)] would return 0
+    # We don't need to predict anymore since it should be zero.
+    if input["Open"] == 0:
+        return jsonify(sales=0.00)
+
     # Checks if the store passed, exists in our store dataset.
     current_store = stores_df[stores_df.Store == input["Store"]]
     if len(current_store) != 1:
