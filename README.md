@@ -6,11 +6,19 @@ Rossmann is Germany's second-largest drug store chain. We have been provided wit
 
 ![Drug](https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1179&q=80)
 
-### Files
 
+### Files
+Here are some files that may be important to those who would like to check the code or to thouse who would want to replicate the project.
+* [app.py](https://github.com/mcabanlit/drug-store-chain/blob/main/app.py) - Contains
+* [drug-store-sales-prediction.ipynb](https://github.com/mcabanlit/drug-store-chain/blob/main/drug-store-sales-prediction.ipynb) - Cheka
+* [miniconda_requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/miniconda_requirements.txt) - Cheka
+* [requirements.txt](https://github.com/mcabanlit/drug-store-chain/blob/main/requirements.txt) - Cheka 2
+* [sales_prediction_small.pkl](https://github.com/mcabanlit/drug-store-chain/blob/main/sales_prediction_small.pkl) - Chesmes
 
 ### Dataset
-
+For this project, we are given two sets of data, which are as follows:
+* [train.csv](https://github.com/mcabanlit/drug-store-chain/blob/main/data/train.csv) - contains sales data on a daily frequency
+* [store.csv](https://github.com/mcabanlit/drug-store-chain/blob/main/data/store.csv) - contains store information
 
 ### Models
 
