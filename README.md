@@ -2,15 +2,7 @@
 
 [![license][5]][6] [![python version][7]][8] [![pywebio version][9]][10] [![scikit version][11]][12] [![build][13]][14] 
  
-Rossmann is Germany's second-largest drug store chain. We have been provided with historical sales data for 1,115 Rossmann stores. The task is to forecast the "Sales" column. The goal of this notebook would be to create a model that would forecast the **sales** by using only the below inputs:
-* Store
-* DayOfWeek
-* Date
-* Customers
-* Open
-* Promo
-* StateHoliday
-* SchoolHoliday
+Rossmann is Germany's second-largest drug store chain. We have been provided with historical sales data for 1,115 Rossmann stores. The task is to forecast the "Sales" column. The goal of this project would be (1) to create a model that would forecast the **sales** by using only these fields as inputs: `Store`, `DayOfWeek`, `Date`, `Customers`, `Open`, `Promo`, `StateHoliday` and `SchoolHoliday` and (2) to create and deploy an API that can serve prediction by receiving a JSON file via POST.
 
 ![Drug](https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1179&q=80)
 
