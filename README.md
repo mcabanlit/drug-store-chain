@@ -25,7 +25,20 @@ After enriching our datasets and merging these two csvs, we tried to remove the 
 
 
 ### Models
-In this regression problem, we tried to find an optimal estimator that could produced better accuracy. The models that we have used in the notebook were: 
+In this regression problem, we tried to find an optimal estimator that could produced better accuracy. The models that we have used in the notebook were compared according to their R-squared, Mean Absolute Error and Root Mean Squared Error.
+
+![image](https://user-images.githubusercontent.com/102983286/177042627-13214ea4-d956-4264-97c4-23d8e6586ca3.png)
+The models that we have used are as follows:
+
+| Estimator                 | Training MAE | Valid MAE  | Training RMSE | Valid RMSE  | TrainingR^2 | ValidR^2 |
+|---------------------------|--------------|------------|---------------|-------------|-------------|----------|
+| GradientBoostingRegressor | 621.526969   | 646.191632 | 867.44368     | 917.094263  | 0.937831    | 0.930204 |
+| ElasticNet                | 890.032279   | 921.517618 | 1235.419808   | 1289.533631 | 0.873897    | 0.862003 |
+| LinearBayesianRidge       | 847.36449    | 851.449988 | 1164.614338   | 1184.581484 | 0.887938    | 0.883551 |
+| LinearRegression          | 847.367452   | 851.450242 | 1164.614335   | 1184.577635 | 0.887938    | 0.883552 |
+| RandomForestRegressor     | 494.02249    | 525.218697 | 736.846054    | 791.106196  | 0.955141    | 0.948063 |
+
+
 ### Usage
 
 ### Issues
