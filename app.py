@@ -163,9 +163,14 @@ def welcome():
     """
     Sales Forecast
     Predicts the sales given the required fields from user input.
-   """
+    """
+    img = open('assets/banner.png', 'rb').read()
+    # Ibrahim Rifath https://unsplash.com/photos/OApHds2yEGQ
+    with use_scope('scope1', clear=True):
+        put_image(img)
     put_text("")
-    welcome = input_group('What would you like to do?', [
+
+    user_actions = input_group('What would you like to do?', [
         actions('This web app uses Random Forest classifier on sales data in order '
                 'to try and predict sales. Please choose one of the options below to proceed.', [
                     {'label': 'Predict Sales', 'value': 'make_prediction', 'color': 'info'},
@@ -175,7 +180,37 @@ def welcome():
                 help_text='The links above are only granted to key personnel, if you would like access, please '
                           'feel free to email mcabanlitph@gmail.com'),
     ])
+    if user_actions['action'] == 'make_prediction':
+        accept = actions('Do you consent the processing of your data?', [
+            # 'Yes', 'No'
+            {'label': 'Yes, I consent.', 'value': 'i_consent', 'color': 'info'},
+            {'label': 'No, I do not consent.', 'value': 'predict', 'color': 'dark'},
+        ], help_text='We will not be storing any of the values that you have entered after the prediction. '
+                     'Please also note that the results of this forecast are not final and is only a product of '
+                     'a model that was trained using the given dataset.')
 
+        if accept == 'i_consent':
+            with use_scope('scope1', clear=True):
+                put_text("")
+    elif user_actions['action'] == 'view_dataset':
+        popup("Opening an external link ⚠️", [
+            put_text('This website would like to open the external link below. Please click '
+                     'the hyperlink below if you wish to continue, if not you may close this popup window.'),
+            put_html('<a href="https://upsystem-my.sharepoint.com/:p:/g/personal/macabanlit_outlook_up_edu_ph/ETA9kG12UjFDkuo7jz1OP9UB6uik9EPSgclsGFR9TF19rg">View Presentation 📊</a>'),
+            put_text(' '),
+            put_buttons(['Close'], onclick=lambda _: close_popup())
+        ])
+
+    elif user_actions['action'] == 'browse_code':
+        popup("Opening an external link ⚠️", [
+            put_text('The heart disease prediction app would like to open the external link below. Please click '
+                     'the hyperlink below if you wish to continue, if not you may close this popup window.'),
+            put_html('<a href="https://github.com/mcabanlit/drug-store-chain">Visit GitHub 🗂️</a>'),
+            put_text(' '),
+            put_buttons(['Close'], onclick=lambda _: close_popup())
+        ])
+
+    welcome()
 
 app.add_url_rule('/', 'webio_view', webio_view(welcome),
                  methods=['GET', 'POST', 'OPTIONS'])
