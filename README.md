@@ -29,7 +29,7 @@ Rossmann is Germany's second-largest drug store chain. We have been provided wit
 ### Requirements
 * `PyWebIO>=1.6.1`
 * `Flask>=2.1.2`
-* `scikit-learn>-1.1.1`
+* `scikit-learn>-1.0.2`
 
 
 [1]: https://img.shields.io/badge/donate-gcash-green
@@ -47,7 +47,7 @@ Rossmann is Germany's second-largest drug store chain. We have been provided wit
 [9]: https://img.shields.io/badge/pywebio-1.6.1-dark
 [10]: https://pywebio.readthedocs.io/en/latest/
 
-[11]: https://img.shields.io/badge/scikit--learn-1.1.1-orange
+[11]: https://img.shields.io/badge/scikit--learn-1.0.2-orange
 [12]: https://scikit-learn.org
 
 [13]: https://img.shields.io/badge/build-passing-green
