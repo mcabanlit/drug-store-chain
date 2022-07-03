@@ -164,10 +164,10 @@ def welcome():
     Sales Forecast
     Predicts the sales given the required fields from user input.
     """
-    img = open('assets/banner.png', 'rb').read()
-    # Ibrahim Rifath https://unsplash.com/photos/OApHds2yEGQ
-    with use_scope('scope1', clear=True):
-        put_image(img)
+    # img = open('assets/banner.png', 'rb').read()
+    # # Ibrahim Rifath https://unsplash.com/photos/OApHds2yEGQ
+    # with use_scope('scope1', clear=True):
+    #     put_image(img)
     put_text("")
 
     user_actions = input_group('What would you like to do?', [
@@ -190,8 +190,9 @@ def welcome():
                      'a model that was trained using the given dataset.')
 
         if accept == 'i_consent':
-            with use_scope('scope1', clear=True):
-                put_text("")
+            put_text("")
+            # with use_scope('scope1', clear=True):
+            #     put_text("")
     elif user_actions['action'] == 'view_dataset':
         popup("Opening an external link ⚠️", [
             put_text('This website would like to open the external link below. Please click '
