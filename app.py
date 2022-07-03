@@ -45,6 +45,7 @@ def predict():
         result = predict_sales(content)
         return result
 
+    return 'Method Not Allowed'
 
 def check_null_features(input):
     """
