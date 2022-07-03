@@ -16,7 +16,7 @@ book_list = [
 ]
 
 validation_empty = pd.read_csv("data/validation_empty.csv")
-model = pickle.load(open('sales_prediction.pkl', 'rb'))
+model = pickle.load(open('sales_prediction_small.pkl', 'rb'))
 
 @app.route('/')
 def index():
@@ -71,8 +71,8 @@ def predict():
 
 def predict_sales(input):
     # 369,4,0,0,0,1,1,2015,1,1,1,3,2,5870.0,4.0,2014.0,0,22.0,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-    values = [[369,4,0,0,0,1,1,2015,1,1,1,3,2,5870.0,4.0,2014.0,0,22.0,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
-    # values = [[353,4,1070,1,0,1,1,2015,1,1,1,1,1,900.0,8.0,2010.0,1,14.0,2013.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0]]
+    # values = [[369,4,0,0,0,1,1,2015,1,1,1,3,2,5870.0,4.0,2014.0,0,22.0,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
+    values = [[353,4,1070,1,0,1,1,2015,1,1,1,1,1,900.0,8.0,2010.0,1,14.0,2013.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0]]
     for_prediction = pd.DataFrame(values, columns=list(validation_empty.columns.values))
     print(for_prediction)
     # forecasted_sales = int(input["DayOfWeek"]) * 100
