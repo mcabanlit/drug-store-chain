@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 stores_df = pd.read_csv("data/store_details.csv")
 validation_empty = pd.read_csv("data/validation_empty.csv")
-model = pickle.load(open('sales_prediction_small.pkl', 'rb'))
+model = pickle.load(open('sales_prediction_lite.pkl', 'rb'))
 
 
 @app.route('/')
