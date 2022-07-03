@@ -3,9 +3,9 @@ from flask import Flask, request, jsonify
 import pickle
 from datetime import datetime
 
-# from pywebio.platform.flask import webio_view
-# from pywebio.input import *
-# from pywebio.output import *
+from pywebio.platform.flask import webio_view
+from pywebio.input import *
+from pywebio.output import *
 
 
 
@@ -16,7 +16,7 @@ validation_empty = pd.read_csv("data/validation_empty.csv")
 model = pickle.load(open('sales_prediction_small.pkl', 'rb'))
 
 
-@app.route('/')
+@app.route('/faq')
 def index():
     """
     Index of our app, which basically just says to access the API via /predict
@@ -158,27 +158,27 @@ def predict_sales(input):
     # Return the forecasted value.
     return jsonify(sales=forecasted_sales)
 
-#
-# def welcome():
-#     """
-#     Sales Forecast
-#     Predicts the sales given the required fields from user input.
-#    """
-#     put_text("")
-#     welcome = input_group('What would you like to do?', [
-#         actions('This web app uses Random Forest classifier on sales data in order '
-#                 'to try and predict sales. Please choose one of the options below to proceed.', [
-#                     {'label': 'Predict Sales', 'value': 'make_prediction', 'color': 'info'},
-#                     {'label': 'View Documentation', 'value': 'view_dataset', 'color': 'secondary'},
-#                     {'label': 'Browse Code', 'value': 'browse_code', 'color': 'dark'},
-#                 ], name='action',
-#                 help_text='The links above are only granted to key personnel, if you would like access, please '
-#                           'feel free to email mcabanlitph@gmail.com'),
-#     ])
-#
-#
-# app.add_url_rule('/', 'webio_view', webio_view(welcome),
-#                  methods=['GET', 'POST', 'OPTIONS'])
+
+def welcome():
+    """
+    Sales Forecast
+    Predicts the sales given the required fields from user input.
+   """
+    put_text("")
+    welcome = input_group('What would you like to do?', [
+        actions('This web app uses Random Forest classifier on sales data in order '
+                'to try and predict sales. Please choose one of the options below to proceed.', [
+                    {'label': 'Predict Sales', 'value': 'make_prediction', 'color': 'info'},
+                    {'label': 'View Documentation', 'value': 'view_dataset', 'color': 'secondary'},
+                    {'label': 'Browse Code', 'value': 'browse_code', 'color': 'dark'},
+                ], name='action',
+                help_text='The links above are only granted to key personnel, if you would like access, please '
+                          'feel free to email mcabanlitph@gmail.com'),
+    ])
+
+
+app.add_url_rule('/', 'webio_view', webio_view(welcome),
+                 methods=['GET', 'POST', 'OPTIONS'])
 
 
 if __name__ == '__main__':
