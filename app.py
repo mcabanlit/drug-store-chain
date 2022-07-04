@@ -121,7 +121,7 @@ def predict_sales(input):
         return jsonify(ERROR='Missing input values, please recheck JSON file.')
 
     # Check if string StateHoliday is correct.
-    if check_StateHoliday(input["StateHoliday"] < 0):
+    if check_StateHoliday(input["StateHoliday"]) < 0:
         return jsonify(ERROR='Invalid StateHoliday passed. Double check that it is a string with'
                              ' values in [0,a,b,c].')
 
