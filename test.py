@@ -13,7 +13,7 @@ r = requests.post('https://drug-store-chain.herokuapp.com/predict', json={
                       "Customers":410,
                       "Open":1,
                       "Promo":0,
-                      "StateHoliday":"0",
+                      "StateHoliday":"b",
                       "SchoolHoliday":1
                  })
 

@@ -70,6 +70,33 @@ def check_null_features(input):
     return null_fields
 
 
+def check_StateHoliday(value):
+    """
+    Converts the StateHoliday string to categorical values.
+
+    Parameters
+    ----------
+    value : String
+        The StateHoliday value sent in the user request.
+
+    Returns
+    -------
+    category int
+        Categorical equivalent of string to model
+    """
+    if value == "0":
+        category = 0
+    elif value == "a":
+        category = 1
+    elif value == "b":
+        category = 2
+    elif value == "c":
+        category = 3
+    else:
+        category = -1
+
+    return category
+
 def predict_sales(input):
     """
     Predicts the sales given the required fields from passed JSON.
@@ -92,6 +119,11 @@ def predict_sales(input):
     null_fields = check_null_features(input)
     if null_fields > 0:
         return jsonify(ERROR='Missing input values, please recheck JSON file.')
+
+    # Check if string StateHoliday is correct.
+    if check_StateHoliday(input["StateHoliday"] < 0):
+        return jsonify(ERROR='Invalid StateHoliday passed. Double check that it is a string with'
+                             ' values in [0,a,b,c].')
 
     # Since sales_df.loc[(sales_df['Open'] == 0) & (sales_df['Sales'] > 0)] would return 0
     # We don't need to predict anymore since it should be zero.
