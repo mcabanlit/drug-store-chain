@@ -39,7 +39,7 @@ The models that we have used are as follows:
 | [LinearRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)          | 847.367452   | 851.450242 | 1164.614335   | 1184.577635 | 0.887938    | 0.883552 |
 | [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)     | 494.02249    | 525.218697 | 736.846054    | 791.106196  | 0.955141    | 0.948063 |
 
-The 'RandomForestRegressor' produced the best results among all the models listed above given default parameters. So I went ahead and performed hyperparameter tuning on the model.
+The `RandomForestRegressor` produced the best results among all the models listed above given default parameters. So I went ahead and performed hyperparameter tuning on the model.
 
 
 ### Usage
